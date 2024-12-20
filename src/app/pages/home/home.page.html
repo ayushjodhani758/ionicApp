@@ -1,0 +1,34 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="success">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>IONIC</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item color="success" id="open-toast">
+      <ion-avatar slot="start">
+        <img src="assets/profile.jpg">
+      </ion-avatar>
+      <ion-label>
+        <h1>Steven Mark</h1>
+        <p>Gatherd: <span class="money">$ 1,500</span></p>
+      </ion-label>
+    </ion-item>
+    <ion-toast trigger="open-toast" message="This toast will disappear after 5 seconds" [duration]="5000"></ion-toast>
+  </ion-list>
+
+  <app-pickup-call-card [hasFooter]="true" [hasHeader]="true" status="Hold" updateAt="26/01/2024 03:10:25" createdAt="25/01/2024" notes="we have two bags that have full. one with plastic and other one is with glasses"></app-pickup-call-card>
+ 
+  <ion-button id="open-action-sheet">Open</ion-button>
+  <ion-action-sheet trigger="open-action-sheet" header="Actions" [buttons]="actionSheetButtons"></ion-action-sheet>
+
+  <ion-fab vertical="bottom" horizontal="end">
+    <ion-fab-button color="success">
+      <ion-icon name="add" (click)="createPickup()"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
